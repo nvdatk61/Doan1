@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title> DO AN 1 </title>
+<style type="text/css">
+	body {
+		width: 1000px;
+		margin: auto;
+		font-family: Arial, sans-serif;
+
+	}
+#header{
+			position: relative;
+            width:1100px;
+            height:120px;
+            border:1px solid #000000;
+            margin-left:auto;
+            margin-right:auto;
+            background-color: LightGrey;
+            color:black;
+            font-size:25px;
+            text-align:right;
+
+        }
+#addlink{
+	font-family: Verdana, Arial, sans-serif;
+    background-color: LightGrey;
+    color: #000000;
+    line-height: normal;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding: 10px;
+    font-size: 90%;
+    font-weight: normal;
+}
+#link{
+	color: #536B77;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+}
+#addanh{
+	float: left;
+	position: absolute;
+	width: 100px;
+	height: 100%;
+	margin-top: 0px;
+}
+#antena{
+	font-family: "Trebuchet MS", "Comic Sans MS", Arial, sans-serif;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #6B8490;
+    margin: 0px;
+}
+#body{
+	position: relative;
+	width: 1000px;
+	height: 700px;
+	border: 2px solid black;
+	margin-right: auto;
+	margin-left: 2px;
+	background-color: white;
+	color: black;
+	font-size: 25px;
+}
+#addanten{
+	width: 50%;
+	float: left;
+	text-align: left;
+	
+}
+#nhapthongso{
+	width: 50%;
+	float: left;
+	text-align: left;
+}
+#thongsodien{
+	width: 400px;
+	float: left;
+	text-align: left;
+	margin-left: 20px;
+}	
+#button{
+	width: 200px;
+	float: left;
+	text-align: left;
+}
+#ketqua{
+	padding: 0;
+	margin:0 auto;
+	width: 300px;
+	float: left;
+	text-align: left;
+
+}
+#bot{
+	text-align: left;
+	font-size: 20px;
+}
+
+</style>
+</head>
+<body>
+
+	<div id="header" >
+		<div id="addanh"> <img src="image/logobk.jpg" alt="logo bach khoa" style="width: 100%;height: 100%;"> </div>
+		<div><p><b> Ð? Án Thi?t K? 1</b></p>
+		<p>Gi?ng viên hu?ng d?n: Th.S Nguy?n Kh?c Ki?m</p>
+		<div id="addlink" align="left" >
+			<table border="0" cellpadding="0" style="border-collapse: collapse; width: 1100px">
+				<tbody>
+					<tr>
+						<td width="100%" class="borders">
+							<a id="link" href="https://www.hust.edu.vn/">Home</a>							
+							|
+							<a id="link" href="http://www.rfwireless-world.com/Terminology/CPW-Coplanar-Waveguide-basics.html">CPW</a>
+							|
+							<a id="link" href="http://www.google.com/"> Google </a>
+							|
+							<a id="link" href="https://www.facebook.com/nguyenvudat1998/">Facebook</a>
+							|
+							<a id="link" href="http://set.hust.edu.vn/"> SET </a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+	</div> 
+	<div id="antena">
+		<div><p align="left" > <i> Coplanar Waveguide Calculator</i> </p></div>
+	</div>
+	<div id="body">
+		<div id="addanten"><img src="image/anten.png" alt="anten" style="height: 80%;width: 80%"></div>
+		<div id="nhapthongso">
+		<h6>Thông s? co b?n</h6>
+	<form>
+		Nh?p t?n s?:<br>
+		<input type="number" id ="tanso"> GHz</br>
+		Nh?p er:<br>
+		<input type="number" id ="hangsodienmoi"></br>
+		Nh?p chi?u cao h: <br>
+		<input type="number" id ="chieucao"> mm</br>
+		</form>
+		</div>
+	<p>________________________________________________________________________</p>
+	<div id="thongsodien">
+		<h6>Thông s? di?n t?</h6>
+	<form>
+		Nh?p tr? kháng Zo: <br>
+		<input type="number" id="trokhang"> Ohm</br>
+		Elec.Length: <br>
+		<input type="number" id="Elec"> deg</br>
+	</form>
+	</div>
+	<div id="button">
+		<br><button  type="button" name="synthesize" value="synthesize" style=" border-color: red; border-width: 2px"  onclick="giaitoan()"> Synthesize</button> </br> 
+		<button  type="button" style=" border-color: green ; border-width: 2px" onclick="alert('Chi ti?t liên h? Nguy?n Vu Ð?t.!')"> Help! </button></br>
+		<button  type="reset" style=" border-color: blue ; border-width: 2px" value="Reset">Reset</button>
+	</div>	
+	<div id="ketqua">
+		<h6> Thông s? v?t lý </h6>
+	<form>
+		S:<br>
+		<input type="number" id ="s"> mm</br>
+		W:<br>
+		<input type="number" id ="w"> mm</br>
+		
+	</form>
+	</div>
+</div>
+	<div id="bot">
+		<h5 style="color: gray"> Description </h5>
+		<p>The microstrip calculator determines the width and length of a microstrip line for a given characteristic impedance (Zo) and electrical length or vice versa. The substrate parameters (er and h) and the frequency of interest are required.</p>
+		<h5 style="color: red"> Synthesize </h5>
+		<p>Enter values for Zo and Electrical Length to determine the physical width and length of the microstrip line. Press Synthesize to see the results.</p>
+		<h5 style="color: green"> Help!</h5>
+		<p> Click on this button you'll be got help form Nguyen Vu Dat</p>
+		<h5 style="color: blue"> Reset</h5>
+		<p> Click on this button....reset all </p>
+		<p align="center"> -----End-----</p>
+	</div>
+	<script>
+	function giaitoan() { 
+		var f=parseInt(document.getElementById("tanso").value);
+		var e=parseInt(document.getElementById("hangsodienmoi").value);
+		var h=parseInt(document.getElementById("chieucao").value);
+		var z=parseInt(document.getElementById("trokhang").value);
+		var el=parseInt(document.getElementById("Elec").value);
+		//s=f+e;
+		//w=f*e;
+		
+		var x, k, delta;
+		var a, b, c=37.5;
+		var pi=Math.PI;
+		var a1, a2;
+		var w,s;
+		x=(z*Math.sqrt(e)/30*pi);
+		a1=429*x;
+		a2=-(1656*x+858);
+		if(a2==0){
+            k=-1656/a1;
+            //a=sqrt(1406.25-1275.25*k);
+            b=a/3;
+            
+        };
+
+        if(a2!=0){
+            delta=/*Math.pow(a2,2)-4*a1*1656*/0;
+            if(delta<0){
+               	window.alert("Try again please!!!")
+            }
+            else if(delta==0){
+                 k=-a2/2*a1; 
+            }
+            else if(delta>0){
+                k=(Math.sqrt(delta)-a*a)/(4*a1*1656);
+            }
+            
+        }
+        a=Math.sqrt(1406.25+1275.25*Math.pow(k,2));
+        console.log(x);
+        b=6*a;
+        w=2*e;
+        s=e-f;
+		document.getElementById("s").value= a;
+		document.getElementById("w").value= b;
+	
+	}
+		
+</script>
+</body>
+   
+</html>
